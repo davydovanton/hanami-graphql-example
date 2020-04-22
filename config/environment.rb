@@ -1,22 +1,21 @@
 # frozen_string_literal: true
 
 require 'warning'
-#
-# Gem.path.each do |path|
-#   Warning.ignore(//, path)
-# end
-#
-# Warning.ignore(/already initialized constant/)
-# Warning.ignore(/previous definition/)
-#
-# Warning.ignore(/warning: The called method .+ is defined here/)
+
+Gem.path.each do |path|
+  Warning.ignore(//, path)
+end
+
+Warning.ignore(/already initialized constant/)
+Warning.ignore(/previous definition/)
+
+Warning.ignore(/warning: The called method .+ is defined here/)
 
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../system/import'
 require_relative './initializers/request_id'
-require_relative '../apps/web/application'
 require_relative '../apps/api/application'
 
 # Disable warnings from dry-monads library.
@@ -27,8 +26,7 @@ Hanami.configure do
   middleware.use RequestId
   middleware.use Rack::Session::Cookie, secret: ENV['WEB_SESSIONS_SECRET']
 
-  mount Api::Application, at: '/api'
-  mount Web::Application, at: '/'
+  mount Api::Application, at: '/'
 
   model do
     ##

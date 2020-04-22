@@ -19,16 +19,11 @@ class Container < Dry::System::Container
   register_folder! 'core/repositories'
   register_folder! 'core/libs'
 
-  #  Monitoring
-  register_folder! 'monitoring/operations'
-  register_folder! 'monitoring/libs'
+  # Posts
+  register_folder! 'posts/operations'
 
-  #  notifications
-  register_folder! 'notifications/operations'
-  register_folder! 'notifications/libs'
-
-  # heroku
-  register_folder! 'heroku_app/operations'
+  # Comments
+  register_folder! 'comments/operations'
 
   configure do |config|
     config.env = Hanami.env

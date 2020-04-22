@@ -11,6 +11,9 @@ gem 'rake'
 gem 'hanami', '1.3.0'
 gem 'puma', '~> 3.12.4'
 
+# GQL
+gem 'graphql'
+
 # persistance layer
 gem 'hanami-model', '~> 1.3'
 gem 'pg'
@@ -20,9 +23,9 @@ gem 'dry-system', '~> 0.9.0'
 gem 'dry-system-hanami', github: 'davydovanton/dry-system-hanami'
 
 # templates
-gem 'hanami-webpack', github: 'samuelsimoes/hanami-webpack'
-gem 'sass'
-gem 'slim'
+# gem 'hanami-webpack', github: 'samuelsimoes/hanami-webpack'
+# gem 'sass'
+# gem 'slim'
 
 # Monitoring and logging
 gem 'semantic_logger'
